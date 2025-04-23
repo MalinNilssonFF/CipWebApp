@@ -15,15 +15,8 @@ fetch("/.auth/me")
     } else {
       userInfoDiv.innerHTML = "<p>You are not logged in.</p>";
     }
-  })
-  .catch(err => {
-    console.error("Error fetching user info:", err);
-    document.getElementById("user-info").innerHTML =
-      "<p>Error fetching user info.</p>";
-  });
 
-
-const me = await fetch("/.auth/me");
+    const me = await fetch("/.auth/me");
 const authInfo = await me.json();
 const token = authInfo[0]?.access_token;
 
@@ -34,3 +27,12 @@ fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/we
 }).then(res => res.json()).then(data => {
    console.log(data);
 });
+  })
+  .catch(err => {
+    console.error("Error fetching user info:", err);
+    document.getElementById("user-info").innerHTML =
+      "<p>Error fetching user info.</p>";
+  });
+
+
+
