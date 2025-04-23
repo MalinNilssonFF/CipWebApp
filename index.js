@@ -21,3 +21,16 @@ fetch("/.auth/me")
     document.getElementById("user-info").innerHTML =
       "<p>Error fetching user info.</p>";
   });
+
+
+const me = await fetch("/.auth/me");
+const authInfo = await me.json();
+const token = authInfo[0]?.access_token;
+
+fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+}).then(res => res.json()).then(data => {
+   console.log(data);
+});
