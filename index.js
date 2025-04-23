@@ -16,9 +16,8 @@ fetch("/.auth/me")
       userInfoDiv.innerHTML = "<p>You are not logged in.</p>";
     }
 console.log(data);
-    const me = await fetch("/.auth/me");
-const authInfo = await me.json();
-const token = authInfo[0]?.access_token;
+    
+const token = data[0]?.access_token;
 
 fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
   headers: {
