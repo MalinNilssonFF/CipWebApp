@@ -1,8 +1,4 @@
-fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
-  headers: {
-    "x-ms-client-principal": encodedClientPrincipal // Optional, if your backend requires it
-  }
-})
+fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast")
   .then(res => res.json())
   .then(data =>  {
      console.log(data);
