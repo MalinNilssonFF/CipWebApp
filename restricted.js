@@ -27,6 +27,7 @@ fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/we
       const weatherList = data.map(item => {
         return `
           <div>
+            <p>Date: ${item.date}</p>
             <p>Temperature: ${item.temperatureC}°C</p>
             <p>Summary: ${item.summary}</p>
           </div>
