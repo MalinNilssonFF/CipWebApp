@@ -14,7 +14,8 @@ fetch("/.auth/me")
       `;
     } else {
       userInfoDiv.innerHTML = "<p>You are not logged in.</p>";
-    });
+    }
+  });
 
 
 fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast")
