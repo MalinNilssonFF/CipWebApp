@@ -5,7 +5,7 @@ fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/we
 })
   .then(res => res.json())
   .then(data => 
-    console.log(data)
+    console.log(data);
      const infoDiv = document.getElementById("restricted-info");
         if (Array.isArray(data)) {
       // Create a list of weather information
