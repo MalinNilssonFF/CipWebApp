@@ -4,8 +4,8 @@ fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/we
   }
 })
   .then(res => res.json())
-  .then(data => 
-    console.log(data);
+  .then(data =>  {
+     console.log(data);
      const infoDiv = document.getElementById("restricted-info");
         if (Array.isArray(data)) {
       // Create a list of weather information
@@ -27,5 +27,5 @@ fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/we
       // If the data format isn't what you expect
       infoDiv.innerHTML = "<p>Failed to load weather data.</p>";
     }
-       )
+  })
   .catch(err => console.error("Fetch error:", err));
