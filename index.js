@@ -16,6 +16,10 @@ fetch("/.auth/me")
       userInfoDiv.innerHTML = "<p>You are not logged in.</p>";
     }
 console.log(data);
+
+fetch("/routes.json")
+  .then(res => res.text())
+  .then(console.log)
     
 const token = data[0]?.access_token;
 console.log(token);
