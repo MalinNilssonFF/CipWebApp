@@ -1,9 +1,9 @@
 {
   "routes": [
     {
-      "route": "/weatherforecast",
+      "route": "/api/*",
       "allowedRoles": ["authenticated"],
-      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast",
+      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/:*",
       "headers": {
         "x-ms-client-principal": "{clientPrincipal}"
       }
