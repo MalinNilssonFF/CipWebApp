@@ -20,9 +20,15 @@ console.log(data);
 const token = data[0]?.access_token;
 console.log(token);
 fetch("/api/weatherforecast")
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error(`API error: ${res.status}`);
+    return res.json();
+  })
   .then(data => {
-    console.log(data);
+    console.log("Weather forecast:", data);
+  })
+  .catch(err => {
+    console.error("Fetch failed:", err);
   });
   })
   .catch(err => {
