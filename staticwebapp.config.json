@@ -3,15 +3,12 @@
   "routes": [
     {
       "route": "/api/weatherforecast",
-      "methods": [
-        "get"
-      ],
       "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast",
       "allowedRoles": [
         "authenticated"
       ]
     },
-     {
+    {
       "route": "/*",
       "serve": "/index.html"
     }
