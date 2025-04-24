@@ -17,23 +17,15 @@ fetch("/.auth/me")
     }
 console.log(data);
 
-fetch("/routes.json")
-  .then(res => res.text())
-  .then(console.log)
-    
-const token = data[0]?.access_token;
-console.log(token);
-fetch("/api/weatherforecast")
-  .then(res => {
-    if (!res.ok) throw new Error(`API error: ${res.status}`);
-    return res.json();
-  })
-  .then(data => {
-    console.log("Weather forecast:", data);
-  })
-  .catch(err => {
-    console.error("Fetch failed:", err);
-  });
+
+fetch("/api/weatherforecast", {
+  headers: {
+    "x-ms-client-principal": `${data.clientPrincipal}` // Optional, if your backend requires it
+  }
+})
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error("Fetch error:", err));
   })
   .catch(err => {
     console.error("Error fetching user info:", err);
