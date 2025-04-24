@@ -1,5 +1,4 @@
 {
-  "trailingSlash": "auto",
   "routes": [
     {
       "route": "/api/*",
@@ -13,8 +12,5 @@
       "route": "/*",
       "serve": "/index.html"
     }
-  ],
-  "mimeTypes": {
-    ".json": "text/json"
-  }
+  ]
 }
