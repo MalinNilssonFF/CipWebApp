@@ -2,11 +2,11 @@
   "trailingSlash": "auto",
   "routes": [
     {
-      "route": "/api/*",
+      "route": "/api/weatherforecast",
       "methods": [
         "get"
       ],
-      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/:*",
+      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast",
       "allowedRoles": [
         "authenticated"
       ]
