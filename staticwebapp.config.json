@@ -3,9 +3,10 @@
   "routes": [
     {
       "route": "/api/weatherforecast",
-      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast",
+      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/:*",
       "allowedRoles": [
-        "authenticated"
+        "authenticated",
+        "anonymous"
       ]
     },
     {
