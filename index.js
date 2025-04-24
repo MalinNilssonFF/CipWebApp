@@ -20,7 +20,7 @@ console.log(data);
 
 fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
   headers: {
-    "x-ms-client-principal": `${data.clientPrincipal}` // Optional, if your backend requires it
+    "x-ms-client-principal": JSON.stringify(data.clientPrincipal) // Optional, if your backend requires it
   }
 })
   .then(res => res.json())
