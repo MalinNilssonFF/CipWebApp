@@ -1,3 +1,7 @@
+function base64Encode(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
 // Check the current login status
 fetch("/.auth/me")
   .then(res => res.json())
@@ -16,11 +20,11 @@ fetch("/.auth/me")
       userInfoDiv.innerHTML = "<p>You are not logged in.</p>";
     }
 console.log(data);
-
+const encodedClientPrincipal = base64Encode(JSON.stringify(data.clientPrincipal));
 
 fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
   headers: {
-    "x-ms-client-principal": JSON.stringify(data.clientPrincipal) // Optional, if your backend requires it
+    "x-ms-client-principal": encodedClientPrincipal // Optional, if your backend requires it
   }
 })
   .then(res => res.json())
