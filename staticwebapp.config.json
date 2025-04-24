@@ -1,14 +1,6 @@
 {
   "routes": [
     {
-      "route": "/api/*",
-      "rewrite": "https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/:*",
-      "allowedRoles": [
-        "authenticated",
-        "anonymous"
-      ]
-    },
-    {
       "route": "/*",
       "serve": "/index.html"
     }
