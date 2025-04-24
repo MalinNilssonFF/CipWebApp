@@ -18,7 +18,7 @@ fetch("/.auth/me")
 console.log(data);
 
 
-fetch("/api/weatherforecast", {
+fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
   headers: {
     "x-ms-client-principal": `${data.clientPrincipal}` // Optional, if your backend requires it
   }
