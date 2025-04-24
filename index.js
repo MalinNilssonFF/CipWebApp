@@ -19,13 +19,11 @@ console.log(data);
     
 const token = data[0]?.access_token;
 console.log(token);
-fetch("https://cipappservice-ghayfnbmdxhtbhaw.westeurope-01.azurewebsites.net/weatherforecast", {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-}).then(res => res.json()).then(data => {
-   console.log(data);
-});
+fetch("/api/weatherforecast")
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  });
   })
   .catch(err => {
     console.error("Error fetching user info:", err);
