@@ -2,7 +2,7 @@
   "routes": [
      {
       "route": "/restricted*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["admin"]
     },
   ]
 }
